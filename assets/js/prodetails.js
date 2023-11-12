@@ -11,8 +11,6 @@ async function fetchSingleProduct(id) {
   const url = `https://api.noroff.dev/api/v1/rainy-days/${id}`;
   try {
     const response = await fetch(url);
-
-    // Error handling
     if (response.ok) {
       const data = await response.json();
       return data;

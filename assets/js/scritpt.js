@@ -5,8 +5,6 @@
 const t_function= async(url)=>{
     try{
         const response = await fetch(url);
-
-  // do some check (error handling)
   if (response.ok){
     const data = await response.json();
     return data;
@@ -18,8 +16,6 @@ const t_function= async(url)=>{
 
     }
 }
-
-
 async function renderData(){
     const data = await t_function(url);
     const container = document.querySelector("#container");
@@ -34,7 +30,6 @@ renderData()
 
 function createCard(element){
     const {title, description, id ,image}= element
-
     if(!id || !description || !title ){
         const errormsage= new Error("Invalid information. Please check the ${json.stringify(element)}")
         console.log(errormsage)
